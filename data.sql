@@ -1,14 +1,4 @@
-CREATE TABLE UAE_used_cars_staging(
-    brand TEXT,
-    model TEXT,
-    p_year TEXT,
-    price TEXT,
-    milage TEXT,
-    body_type TEXT,
-    cylinders TEXT,
-    transmission_type TEXT,
-    fuel_type TEXT,
-    color TEXT,
-    emirate TEXT,
-    description TEXT
-);
+SELECT brand, model , COUNT(cylinders) AS "unkown_cylinders_records"
+FROM uae_used_cars_staging
+WHERE cylinders  = 'Unknown'
+GROUP BY brand, model;
