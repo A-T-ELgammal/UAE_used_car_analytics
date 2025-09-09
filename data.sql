@@ -1,3 +1,3 @@
-UPDATE uae_used_cars_staging
-SET emirate = 'Fujeirah'
-WHERE emirate = ' Fujeirah';
+SELECT emirate , COUNT(emirate)
+FROM uae_used_cars_staging
+GROUP BY emirate;
