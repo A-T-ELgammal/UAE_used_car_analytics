@@ -1,4 +1,2 @@
-
-UPDATE uae_used_cars_staging
-SET cylinders = '0'
-WHERE fuel_type = 'Electric';
+DELETE FROM uae_used_cars_staging
+WHERE model LIKE '%other%';
