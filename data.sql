@@ -1,24 +1,18 @@
-SELECT brand , COUNT(brand)
-        
-FROM uae_used_cars_staging
-GROUP BY brand;
+-- select p_year, price, milage, cylinders
+-- FROm uae_used_cars_staging
+-- WHERE p_year = '[A-Za-z]' OR
+--         price = '[A-Za-z]' OR 
+--         milage = '[A-Za-z]' OR
+--         cylinders = '[A-Za-z]'
+--         OR ;
 
-SELECT model , COUNT(model)
-        
+SELECT *
 FROM uae_used_cars_staging
-GROUP BY model;
-
-SELECT body_type , COUNT(body_type)
-        
-FROM uae_used_cars_staging
-GROUP BY body_type;
-
-SELECT fuel_type , COUNT(fuel_type)
-        
-FROM uae_used_cars_staging
-GROUP BY fuel_type;
-
-SELECT color , COUNT(color)
-        
-FROM uae_used_cars_staging
-GROUP BY color;
+WHERE p_year = '[A-Za-z]' 
+    OR price = '[A-Za-z]'
+    OR milage = '[A-Za-z]'
+    OR cylinders = '[A-Za-z]'
+    OR p_year IS NULL
+    OR price IS NULL
+    OR milage IS NULL
+    OR cylinders IS NULL;
