@@ -18,5 +18,5 @@ engine = sqlalchemy.create_engine(connection_request)
 try:
     with engine.connect() as connection:
         print('Successfully connected to the PostgreSQL database')
-except exption as ex:
+except Exception as ex:
     print(f'failed to connect to postgreql due to this {ex}')
