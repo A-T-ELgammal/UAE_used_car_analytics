@@ -3,11 +3,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import DB_manager
+import visualizer
 
-used_cars = pd.read_csv('/home/ahmed/projects/data_analysis/projects/data/data_cleaned.csv',delimiter= ',')
+visualizer = visualizer()
+data_path = '/home/ahmed/projects/data_analysis/projects/src/data.sql'
+
+visualizer.load_data(data_path, ',')
 
 
-# def emirates_ranking():
+def emirates_ranking():
     emirates_ranking_query = " SELECT emirate, COUNT(emirate) AS number_of_cars FROM uae_used_cars_cleaned GROUP BY emirate;"
     emirares_df = pd.read_sql(emirates_ranking_query, engine)
     emirares_df = emirares_df.sort_values('number_of_cars', ascending= False)
