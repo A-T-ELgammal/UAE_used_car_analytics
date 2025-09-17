@@ -3,12 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 
-class Visualizer:
     
-    def __init__():
-
-
-    def load_data(data_CSV_path: str):
-        data = pd.read_csv(data_CSV_path, delimiter=',')
-        return data
-    
+def pieChart_plot(labels: pd.DataFrame, values: pd.DataFrame, plot_name: str):
+    colors = sns.color_palette('bright6')
+    plt.pie(values, labels=labels, colors= colors, autopct='%.2f%%', pctdistance= 0.8)
+    plot_path = f'/home/ahmed/projects/data_analysis/projects/ouput/plotting_images/{plot_name}'
+    plt.savefig(plot_path)
+    plt.show()

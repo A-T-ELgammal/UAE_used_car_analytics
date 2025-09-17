@@ -5,29 +5,24 @@ import pandas as pd
 import DB_manager
 import visualizer
 
-visualizer = visualizer()
-data_path = '/home/ahmed/projects/data_analysis/projects/src/data.sql'
+data_path = '/home/ahmed/projects/data_analysis/projects/data/data_cleaned.csv'
 
-visualizer.load_data(data_path, ',')
+#queries:
+#From where you will find most of used cars
+emirates_ranking_query = " SELECT emirate, COUNT(emirate) AS number_of_cars FROM uae_used_cars_cleaned GROUP BY emirate;"
 
 
-def emirates_ranking():
-    emirates_ranking_query = " SELECT emirate, COUNT(emirate) AS number_of_cars FROM uae_used_cars_cleaned GROUP BY emirate;"
-    emirares_df = pd.read_sql(emirates_ranking_query, engine)
-    emirares_df = emirares_df.sort_values('number_of_cars', ascending= False)
-    palette = sns.color_palette("Set2", len(emirares_df))
-
-    sns.barplot(data= emirares_df, x= 'number_of_cars', y= 'emirate', palette = palette)
-    plt.title('emirates_ranking_of_used_cars')
-    plt.xlabel('used_cars_available')
-    plt.ylabel('Emirate')
-    plt.savefig('/home/ahmed/projects/data_analysis/projects/ouput/plotting_images/emirates_ranking.png', dpi = 300, bbox_inches = 'tight')
-    plt.show()
 
 def main():
     sql_connection = DB_manager.Sql_connection()
+    # visualizer = visualizer()
+
     sql_connection.postgres_connect('postgres','123456', 'localhost', '5432', 'UAE_used_cars')
-    # emirates_ranking()
+    emirares_df = sql_connection.query_df(emirates_ranking_query)
+    emirares_df = emirares_df.sort_values('number_of_cars', ascending= False)
+    visualizer.pieChart_plot(emirares_df['emirate'], emirares_df['number_of_cars'], 'emirates_ranknig_pie')
+    # print(emirares_df)    
+
 
 if __name__ == "__main__":
     main()
