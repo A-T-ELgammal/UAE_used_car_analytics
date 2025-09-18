@@ -28,13 +28,16 @@ def pieChart_emirates_rankning():
     
 def bar_brand_ranking():
     brand_query = '''
-    SELECT brand, COUNT(*) AS brand_count
+    SELECT brand AS brand_name, COUNT(*) AS brand_count
     FROM uae_used_cars_cleaned
     GROUP BY brand
-    ORDER BY model_count DESC;
+    ORDER BY brand_count DESC;
     ''' 
     brand_ranking_df = sql_connection.query_df(brand_query)
     print(brand_ranking_df.head(5))
+    visualizer.barChart_plot(brand_ranking_df['brand_count'], 
+                             brand_ranking_df['brand_name'], 'number_of_cars',
+                             'bran_name', 'brand_ranking_in_used_market')
 
 def main():
     # pieChart_emirates_rankning()

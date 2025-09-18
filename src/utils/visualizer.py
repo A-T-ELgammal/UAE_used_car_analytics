@@ -14,7 +14,7 @@ def pieChart_plot(labels: pd.DataFrame, values: pd.DataFrame, plot_name: str):
 
 def barChart_plot(values: pd.DataFrame, labels: pd.DataFrame, x_name: str, y_name: str, title: str):
     sns.barplot(x= values, y= labels)
-    plt.xlabel(x_name)
+    plt.xlabel(x_name, fontsize=14, color='blue', fontweight='bold')
     plt.ylabel(y_name)
     plt.title(title)
     plt.savefig(f'/home/ahmed/projects/data_analysis/projects/ouput/plotting_images/{title}')
