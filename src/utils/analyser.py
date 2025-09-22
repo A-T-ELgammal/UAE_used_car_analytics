@@ -34,13 +34,12 @@ def bar_brand_ranking():
     ORDER BY brand_count DESC;
     ''' 
     brand_ranking_df = sql_connection.query_df(brand_query)
-    print(brand_ranking_df.head(5))
     visualizer.barChart_plot(brand_ranking_df['brand_count'], 
                              brand_ranking_df['brand_name'], 'number_of_cars',
-                             'bran_name', 'brand_ranking_in_used_market')
+                             'brand_name', 'brand_ranking_in_used_market')
 
 def main():
-    # pieChart_emirates_rankning()
-    bar_brand_ranking()
+    pieChart_emirates_rankning()
+    # bar_brand_ranking()
 if __name__ == "__main__":
     main()
