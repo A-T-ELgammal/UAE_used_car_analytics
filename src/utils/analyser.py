@@ -37,9 +37,15 @@ def bar_brand_ranking():
     visualizer.barChart_plot(brand_ranking_df['brand_count'], 
                              brand_ranking_df['brand_name'], 'number_of_cars',
                              'brand_name', 'brand_ranking_in_used_market')
-
+def price_production_year_box_plot():
+    price_p_year_query = '''
+    SELECT price , p_year
+    FROM uae_used_cars_cleaned
+    GROUP BY p_year
+    ORDER BY p_year
+'''
 def main():
-    pieChart_emirates_rankning()
-    # bar_brand_ranking()
+    # pieChart_emirates_rankning()
+    bar_brand_ranking()
 if __name__ == "__main__":
     main()

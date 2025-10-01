@@ -21,3 +21,11 @@ def barChart_plot(values: pd.DataFrame, labels: pd.DataFrame, x_name: str, y_nam
     plt.title(title)
     plt.savefig(f'/home/ahmed/projects/data_analysis/projects/ouput/plotting_images/{title}')
     plt.show()
+
+def box_plot(data: pd.DataFrame, x: pd.DataFrame, y: pd.DataFrame, title: str, y_label: str, x_label: str):
+    sns.boxenplot(data= data, x= x, y= y) 
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.savefig(f'/home/ahmed/projects/data_analysis/projects/ouput/plotting_images/{title}')
+    plt.show()   
