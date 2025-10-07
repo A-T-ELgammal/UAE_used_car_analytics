@@ -73,12 +73,12 @@ Two core classes were implemented for modularity and scalability:
 
 #### 📷 Sample Python Visualizations
 
-| Visualization                | Description                               | Preview                                                                      |
-| ---------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------- |
-| **Brand Ranking**            | Top brands by number of listings          | ![Brand Ranking](ouput/plotting_images/brand_ranking_in_used_market.png.png) |
-| **Emirates Ranking**         | Distribution of listings by Emirate       | ![Emirates Ranking](ouput/plotting_images/emirates_ranking.png)              |
-| **Emirates Pie Chart**       | Emirate-wise market share                 | ![Emirates Pie](ouput/plotting_images/emirates_ranknig_pie.png)              |
-| **Price vs Production Year** | Relationship between price and model year | ![Price vs Year](ouput/plotting_images/price_production_year_plot.png)       |
+| Visualization                | Description                               | Preview                                                                       |
+| ---------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------- |
+| **Brand Ranking**            | Top brands by number of listings          | ![Brand Ranking](output/plotting_images/brand_ranking_in_used_market.png.png) |
+| **Emirates Ranking**         | Distribution of listings by Emirate       | ![Emirates Ranking](output/plotting_images/emirates_ranking.png)              |
+| **Emirates Pie Chart**       | Emirate-wise market share                 | ![Emirates Pie](output/plotting_images/emirates_ranknig_pie.png)              |
+| **Price vs Production Year** | Relationship between price and model year | ![Price vs Year](output/plotting_images/price_production_year_plot.png)       |
 
 ---
 
